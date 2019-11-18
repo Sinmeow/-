@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./test.css">
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+            background-color: #ccc;
+        }
+
+        #testWrap {
+            /* 遮罩层效果 */
+            width: 100%;
+            height: 100%;
+            background-color: rgba(75, 75, 75, 0.5);
+            /* 弹性盒子使内容居中 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* 采用固定定位使弹窗出现后不会随着页面滚动而移动 */
+            position: fixed;
+            top: 0px;
+            /* 隐藏 */
+            visibility: hidden;
+        }
+
+        #test {
+            /* 内容区域 */
+            width: 400px;
+            height: 600px;
+            background-color: #66ccff;
+            /* 弹性盒子使内容居中 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #testWrap:target {
+            /* 显示 */
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 按钮 点击弹窗 -->
+    <a href="#testWrap"><button>弹窗</button></a>
+
+    <!-- 弹窗 -->
+    <div id="testWrap">
+        <!-- 弹窗的内容区域 -->
+        <div id="test">
+            <a href="#"><button>取消</button></a>
+        </div>
+    </div>
+    
+</body>
+
+</html>
