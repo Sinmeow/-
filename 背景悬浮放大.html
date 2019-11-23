@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .banner {
+            /* 设置背景图容器的大小 */
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+            background-image: url(./01.jpg);
+            background-size: 100%;
+            /* 固定图片位置 */
+            background-repeat: no-repeat;
+            position: relative;
+            background-position: center;
+            transition: 1.5s;
+        }
+        /* 遮罩层 */
+        .fixed {
+            /* 将遮罩层隐藏 */
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(30,30,30,0.3);
+        }
+        /* 遮罩层中的按钮 */
+        .banner-btn {
+            width: 100px;
+            height: 30px;
+            border: 1px solid #fff;
+            color: #fff;
+            margin: 85px auto 0px auto;
+            text-align: center;
+            line-height: 28px;
+        }
+        .banner:hover {
+            background-size: 125%;
+        }
+        /* 通过子元素选择器在触发.banner:hover时选中遮罩层 */
+        .banner:hover>.fixed {
+            /* 显示 */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <!-- 遮罩层 -->
+        <div class="fixed">
+            <div class="banner-btn">点击进入</div>
+        </div>
+    </div>
+</body>
+
+</html>
